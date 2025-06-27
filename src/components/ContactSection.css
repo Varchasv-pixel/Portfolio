@@ -1,0 +1,221 @@
+/* Container and layout */
+.contact-section {
+  padding-top: 6rem;    /* py-24 */
+  padding-bottom: 6rem;
+  padding-left: 1rem;   /* px-4 */
+  padding-right: 1rem;
+  position: relative;
+ /* bg-secondary/30, adjust */
+  max-width: 80rem;     /* max-w-5xl ~ 1280px */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Headings */
+.contact-section h2 {
+  font-size: 2rem;      /* text-3xl */
+  font-weight: 700;
+  margin-bottom: 1rem;  /* mb-4 */
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-section h2 {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+/* Primary text color */
+.text-primary {
+  color: #3173de;
+}
+
+/* Muted foreground text */
+.text-muted-foreground {
+  color: #6b7280;
+}
+
+/* Paragraph */
+.contact-section p {
+  text-align: center;
+  color: #b9c2d1; /* muted-foreground */
+  margin-bottom: 3rem; /* mb-12 */
+  max-width: 40rem; /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem; /* gap-12 */
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Section titles */
+.contact-info-title,
+.contact-form-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* Contact Info Container */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space-y-8 */
+}
+
+/* Individual Contact Items */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem; /* space-x-4 */
+}
+
+/* Icon container */
+.contact-icon {
+  padding: 0.75rem; /* p-3 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: rgba(59, 130, 246, 0.1); /* bg-primary/10 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon size and color */
+.contact-icon svg {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem;  /* w-6 */
+  color: #3b82f6; /* text-primary */
+}
+
+/* Contact Text block */
+.contact-text h4 {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.contact-text a,
+.contact-text span {
+  color: #acacca; /* muted-foreground */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-text a:hover,
+.contact-text span:hover {
+  color: #3b82f6; /* hover:text-primary */
+}
+
+
+/* Form title */
+.contact-formm-title {
+  margin-bottom: 1.5rem;
+}
+
+/* Form element spacing */
+.contact-formm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  
+  /* space-y-6 */
+}
+
+/* Labels */
+.contact-formm label {
+  display: block;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Inputs & Textarea */
+.contact-formm input,
+.contact-formm textarea {
+  width: 100%;
+  padding: 0.75rem 1rem; /* px-4 py-3 */
+  border: 1px solid #d1d5db; /* border-input */
+  border-radius: 0.375rem; /* rounded-md */
+  background-color: #ffff; /* bg-background */
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  resize: none; /* for textarea */
+}
+
+.contact-formm input:focus,
+.contact-formm textarea:focus {
+  box-shadow: 0 0 0 2px #3b82f6; /* focus:ring-2 focus:ring-primary */
+  border-color: #3b82f6;
+}
+
+
+
+/* Button */
+.cosmic-button {
+  background-color: #3b82f6; /* primary */
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px; /* rounded-full */
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cosmic-button:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.cosmic-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Full width button */
+.cosmic-button.w-full {
+  width: 100%;
+}
+
+
+
+
+.contact-formm {
+  background-color: rgba(255, 255, 255, 0.1);   /* transparent white */
+  backdrop-filter: blur(10px);                  /* frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);          /* Safari support */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-formm {
+  background-color: rgba(58, 68, 208, 0.151); /* semi-transparent dark glass effect */
+  backdrop-filter: blur(10px);          /* frosted glass look */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  color: #d3d3db;                       /* keep text readable on dark bg */
+}
+
+
+
+
+
