@@ -77,7 +77,24 @@
   color: #0369a1;
   padding: 0.25rem 0.5rem;
   border-radius: 9999px;
+  cursor: pointer;
+  
 }
+
+
+
+/* Hover effect */
+.project-tag:hover {
+  background-color: #e2e3e6da;  /* darker blue on hover */
+  transform: scale(1.05);     /* subtle grow on hover */
+}
+
+/* Disabled style */
+.project-tag:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 
 .project-title {
   font-weight: 600;

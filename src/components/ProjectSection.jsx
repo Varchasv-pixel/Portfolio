@@ -90,7 +90,7 @@ export const ProjectsSection = () => {
             className="projects-button"
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/machadop1407"
+            href="https://github.com/Varchasv-pixel"
           >
             Check My GitHub <ArrowRight size={16} />
           </a>
