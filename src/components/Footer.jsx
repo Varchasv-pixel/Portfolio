@@ -8,7 +8,7 @@ export const Footer = () => {
 
       <div className="social-links centered">
         <a
-          href="https://www.linkedin.com/in/YOUR_LINKEDIN"
+          href="https://www.linkedin.com/in/varchasv-sharma-6a7b4731b/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

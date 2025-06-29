@@ -1,16 +1,19 @@
 import { useState } from "react";
-import "./SkillsSection.css"; // Import your CSS file
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiExpress } from "react-icons/si";
+import "./SkillsSection.css";
 
+// Updated skills with icons
 const skills = [
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
+  { name: "HTML/CSS", icon: <FaHtml5 />, category: "frontend" },
+  { name: "JavaScript", icon: <FaJs />, category: "frontend" },
+  { name: "React", icon: <FaReact />, category: "frontend" },
+  { name: "TypeScript", icon: <SiTypescript />, category: "frontend" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, category: "frontend" },
+  { name: "Next.js", icon: <SiNextdotjs />, category: "frontend" },
+  { name: "Node.js", icon: <FaNodeJs />, category: "backend" },
+  { name: "Express", icon: <SiExpress />, category: "backend" },
+  { name: "MongoDB", icon: <SiMongodb />, category: "backend" },
 ];
 
 const categories = ["frontend", "backend"];
@@ -30,9 +33,9 @@ export const SkillsSection = () => {
         </h2>
 
         <div className="skills-categories">
-          {categories.map((category, key) => (
+          {categories.map((category) => (
             <button
-              key={key}
+              key={category}
               onClick={() => setActiveCategory(category)}
               className={`skills-button ${
                 activeCategory === category ? "active" : ""
@@ -44,18 +47,10 @@ export const SkillsSection = () => {
         </div>
 
         <div className="skills-grid">
-          {filteredSkills.map((skill, key) => (
-            <div key={key} className="skill-card">
-              <div className="skill-header">
-                <h3>{skill.name}</h3>
-              </div>
-              <div className="skill-bar-background">
-                <div
-                  className="skill-bar-fill"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
-              <div className="skill-percentage">{skill.level}%</div>
+          {filteredSkills.map((skill) => (
+            <div key={skill.name} className="skill-card-vertical">
+              <div className="skill-icon">{skill.icon}</div>
+              <h3 className="skill-name">{skill.name}</h3>
             </div>
           ))}
         </div>

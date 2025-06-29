@@ -1,114 +1,115 @@
 .skills-section {
-  padding: 6rem 1rem;
-  
-}
-
-.skills-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+  padding: 2rem;
+  margin: 4rem;
 }
 
 .skills-title {
-  font-size: 2.25rem;
-  font-weight: bold;
-  margin-bottom: 3rem;
-}
-
-.skills-title .highlight {
-  color: #6366f1; /* Example primary color */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .skills-categories {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .skills-button {
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  background-color: rgba(200, 200, 200, 0.5);
-  color: #333;
-  border: none;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: capitalize;
+  border: 1px solid #eee;
+  background-color: #f5f5f5;
+  color: #000000b5;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .skills-button:hover {
-  background-color: rgba(180, 180, 180, 0.7);
+  transform: translateY(-3px);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .skills-button.active {
-  background-color: #6366f1;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+/* dark mode styles for skills buttons */
+.dark .skills-button {
+  background: rgba(36, 14, 236, 0.1);
+  color: #ffffff;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark .skills-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+}
+
+.dark .skills-button.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-@media (min-width: 640px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.skill-card {
-  background-color: white;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+/* light mode skill cards */
+.skill-card-vertical {
+  background-color: #f5f5f5;
+  color: #000000b5;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  width: 120px;
+  height: 150px;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.skill-card:hover {
+.skill-card-vertical:hover {
   transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-.skill-header h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
+.skill-icon {
+  font-size: 5rem;
   margin-bottom: 0.5rem;
-  text-align: left;
+  color: #000;
 }
 
-.skill-bar-background {
-  height: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 9999px;
-  overflow: hidden;
+/* dark mode skill cards */
+.dark .skill-card-vertical {
+  background: rgba(36, 14, 236, 0.1);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.skill-bar-fill {
-  height: 100%;
-  background-color: #6366f1;
-  border-radius: 9999px;
-  transition: width 1.5s ease-out;
+.dark .skill-card-vertical:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-.skill-percentage {
-  text-align: right;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  color: #666;
+.dark .skill-icon {
+  color: #ffffffe9;
 }
 
-.skill-header h3 {
-  color: #0f0f0f; /* Dark gray text for visibility */
+.skill-name {
+  font-size: 1rem;
 }
 
-.skill-percentage {
-  color: #0f0f0f; /* Muted gray */
+.skill-name:hover {
+  cursor: pointer;
 }

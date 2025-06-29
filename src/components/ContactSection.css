@@ -68,11 +68,12 @@
 
 .contact-form-card {
   backdrop-filter: blur(10px);
-  background-color: rgba(24, 76, 217, 0.1);
+  background-color: rgba(28, 8, 91, 0.281);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.75rem;
   padding: 2rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  
 }
 
 .contact-form-card form {
@@ -87,7 +88,7 @@
 
 .contact-form-card input,
 .contact-form-card textarea {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.784);
   border: 1px solid #d1d5db;
   border-radius: 0.375rem;
   padding: 0.75rem 1rem;

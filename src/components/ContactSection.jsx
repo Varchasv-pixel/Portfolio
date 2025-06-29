@@ -61,7 +61,7 @@ export const ContactSection = () => {
               <Mail className="contact-icon" />
               <div>
                
-                <a href="varch.1906@gmail.com">hello@gmail.com</a>
+                <a href="varch.1906@gmail.com">varch.1906@gmail.com</a>
               </div>
             </div>
 
@@ -91,6 +91,7 @@ export const ContactSection = () => {
                 name="name"
                 required
                 placeholder="Your name"
+                autoComplete="name"
               />
 
               <label htmlFor="email">Email</label>
@@ -100,6 +101,7 @@ export const ContactSection = () => {
                 name="email"
                 required
                 placeholder="you@example.com"
+                autoComplete="email"
               />
 
               <label htmlFor="message">Message</label>
@@ -109,6 +111,7 @@ export const ContactSection = () => {
                 rows={4}
                 required
                 placeholder="Write your message..."
+                autoComplete="off"
               ></textarea>
 
               <button

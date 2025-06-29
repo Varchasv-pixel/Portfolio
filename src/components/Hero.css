@@ -102,7 +102,20 @@
 /* CTA button container */
 .hero-cta {
   padding-top: 1rem;
+
 }
+
+.cosmic-button {
+  text-decoration: none;
+}
+
+
+
+.cosmic-button:hover,
+.cosmic-button:focus {
+  text-decoration: none;
+}
+
 
 /* Scroll indicator at bottom center */
 .scroll-indicator {
