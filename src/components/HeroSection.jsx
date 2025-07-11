@@ -56,7 +56,7 @@ export const HeroSection = () => {
 
   return (
     <section id="hero" className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
-      {isLightMode && <ParticlesBackground />}
+      {/* {isLightMode && <ParticlesBackground />} */}
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -70,18 +70,6 @@ export const HeroSection = () => {
             exceptional digital experiences. I specialize in building modern, scalable web applications 
             that combine beautiful,  crisp designs with powerful functionality.
           </p>
-
-          <div className="hero-stats fade-in-delay-4">
-            <div className="stat-item">
-              <span className="stat-number">1+</span>
-              <span className="stat-label">Years Experience</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">5+</span>
-              <span className="stat-label">Projects Completed</span>
-            </div>
-           
-          </div>
 
           <div className="hero-cta fade-in-delay-5">
             <a href="#contact" className="cosmic-button primary-btn">
