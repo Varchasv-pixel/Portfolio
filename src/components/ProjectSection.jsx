@@ -1,42 +1,64 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";  // Correct icon name: Github
-
+import { ArrowRight, ExternalLink, Github, Filter } from "lucide-react";
+import { useState } from "react";
 import "./ProjectSection.css";
 
-// Define your projects array as a normal constant, NOT export it as ProjectSection
-export const  projects = [
+// Enhanced projects data - only 3 projects
+export const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "E-Commerce Platform",
+    description: "A full-featured e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    category: "fullstack",
+    demoUrl: "https://demo-ecommerce.com",
+    githubUrl: "https://github.com/Varchasv-pixel/ecommerce-platform",
+    featured: true,
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
-    description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Task Management App",
+    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=300&fit=crop",
+    tags: ["React", "TypeScript", "Firebase", "Tailwind"],
+    category: "frontend",
+    demoUrl: "https://task-app-demo.com",
+    githubUrl: "https://github.com/Varchasv-pixel/task-manager",
+    featured: true,
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Weather Dashboard",
+    description: "A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400&h=300&fit=crop",
+    tags: ["React", "OpenWeather API", "Chart.js", "CSS3"],
+    category: "frontend",
+    demoUrl: "https://weather-dashboard.com",
+    githubUrl: "https://github.com/Varchasv-pixel/weather-app",
+    featured: false,
   },
 ];
 
-// Export your React component here
+const categories = [
+  { id: "all", name: "All Projects" },
+  { id: "frontend", name: "Frontend" },
+  { id: "backend", name: "Backend" },
+  { id: "fullstack", name: "Full Stack" },
+];
+
 export const ProjectsSection = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [filteredProjects, setFilteredProjects] = useState(projects);
+
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    if (category === "all") {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(projects.filter(project => project.category === category));
+    }
+  };
+
   return (
     <section id="projects" className="projects-section">
       <div className="projects-container">
@@ -49,15 +71,61 @@ export const ProjectsSection = () => {
           crafted with attention to detail, performance, and user experience.
         </p>
 
+        {/* Filter Buttons */}
+        <div className="projects-filter">
+          <div className="filter-icon">
+            <Filter size={20} />
+          </div>
+          <div className="filter-buttons">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => handleCategoryChange(category.id)}
+                className={`filter-button ${
+                  activeCategory === category.id ? "active" : ""
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="projects-grid">
-          {projects.map((project, key) => (
-            <div key={key} className="project-card">
+          {filteredProjects.map((project) => (
+            <div key={project.id} className="project-card">
               <div className="project-image-wrapper">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="project-image"
+                  loading="lazy"
                 />
+                {project.featured && (
+                  <div className="featured-badge">Featured</div>
+                )}
+                <div className="project-overlay">
+                  <div className="project-actions">
+                    <a 
+                      href={project.demoUrl} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="project-action-btn demo-btn"
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                    <a 
+                      href={project.githubUrl} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="project-action-btn github-btn"
+                    >
+                      <Github size={16} />
+                      Code
+                    </a>
+                  </div>
+                </div>
               </div>
 
               <div className="project-content">
@@ -71,19 +139,16 @@ export const ProjectsSection = () => {
 
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
-
-                <div className="project-links">
-                  <a href={project.demoUrl} target="_blank" rel="noreferrer">
-                    <ExternalLink size={20} />
-                  </a>
-                  <a href={project.githubUrl} target="_blank" rel="noreferrer">
-                    <Github size={20} />
-                  </a>
-                </div>
               </div>
             </div>
           ))}
         </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="no-projects">
+            <p>No projects found for this category.</p>
+          </div>
+        )}
 
         <div className="projects-footer">
           <a
@@ -92,7 +157,7 @@ export const ProjectsSection = () => {
             rel="noreferrer"
             href="https://github.com/Varchasv-pixel"
           >
-            Check My GitHub <ArrowRight size={16} />
+            View More on GitHub <ArrowRight size={16} />
           </a>
         </div>
       </div>

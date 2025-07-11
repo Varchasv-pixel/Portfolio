@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // On mount, check saved theme or system preference
   useEffect(() => {
@@ -27,34 +28,48 @@ export const ThemeToggle = () => {
 
   // Toggle theme function
   const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
-    }
+    setIsAnimating(true);
+    
+    setTimeout(() => {
+      if (isDarkMode) {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        setIsDarkMode(false);
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        setIsDarkMode(true);
+      }
+      
+      // Dispatch custom event for other components to listen to
+      window.dispatchEvent(new CustomEvent("themeChanged"));
+      
+      setIsAnimating(false);
+    }, 150);
   };
 
   return (
     <button
       onClick={toggleTheme}
       aria-label="Toggle dark mode"
-      style={{
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        padding: 0,
-        marginLeft: "0.5rem",
-      }}
+      className={`theme-toggle-btn ${isAnimating ? 'animating' : ''}`}
+      disabled={isAnimating}
     >
-      {isDarkMode ? (
-        <Sun size={24} color="#facc15" />
-      ) : (
-        <Moon size={24} color="#3b82f6" />
-      )}
+      <div className="icon-container">
+        {isDarkMode ? (
+          <Sun 
+            size={24} 
+            className={`sun-icon ${isAnimating ? 'rotate' : ''}`}
+            color="#facc15" 
+          />
+        ) : (
+          <Moon 
+            size={24} 
+            className={`moon-icon ${isAnimating ? 'rotate' : ''}`}
+            color="#3b82f6" 
+          />
+        )}
+      </div>
     </button>
   );
 };

@@ -12,7 +12,7 @@
 }
 
 .hero-container {
-  max-width: 64rem; /* approx max-w-4xl */
+  max-width: 64rem;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -20,19 +20,43 @@
 }
 
 .hero-content > * + * {
-  margin-top: 1.5rem; /* spacing between children */
+  margin-top: 1.5rem;
+}
+
+/* Hero Badge */
+.hero-badge {
+  margin-bottom: 2rem;
+}
+
+.badge-text {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 25px;
+  color: #667eea;
+  font-size: 0.9rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.dark .badge-text {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+  border-color: rgba(102, 126, 234, 0.3);
+  color: #93c5fd;
 }
 
 /* Title */
 .hero-title {
   font-weight: 700;
-  font-size: 2.25rem; /* text-4xl */
-  letter-spacing: -0.025em; /* tracking-tight */
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: 3.75rem; /* md:text-6xl */
+    font-size: 3.75rem;
   }
 }
 
@@ -66,6 +90,12 @@
   animation-delay: 2s;
 }
 
+.fade-in-delay-5 {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2.5s;
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -74,17 +104,25 @@
 
 /* Colors */
 .text-primary {
-  color: #3b82f6; /* example primary color, blue-500 */
+  color: #3b82f6;
 }
 
 .text-gradient {
   background: linear-gradient(90deg, #3b82f6 0%, #9333ea 100%);
-  -webkit-background-clip: text; /* Safari and Chrome */
-  background-clip: text;         /* Standard property */
-  -webkit-text-fill-color: transparent; /* Required for Safari */
-  color: transparent;            /* Fallback for other browsers */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
+.highlight-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 600;
+}
 
 .ml-2 {
   margin-left: 0.5rem;
@@ -92,32 +130,126 @@
 
 /* Subtitle */
 .hero-subtitle {
-  font-size: 1.125rem; /* text-lg */
-  color: #6b7280; /* text-muted-foreground (gray-500) */
-  max-width: 42rem; /* max-w-2xl */
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
 }
 
-/* CTA button container */
-.hero-cta {
-  padding-top: 1rem;
+.dark .hero-subtitle {
+  color: #9ca3af;
+}
 
+/* Hero Stats */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.dark .stat-label {
+  color: #9ca3af;
+}
+
+/* CTA Buttons */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .cosmic-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
   text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
 }
 
-
-
-.cosmic-button:hover,
-.cosmic-button:focus {
-  text-decoration: none;
+.primary-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  color: white;
+}
 
-/* Scroll indicator at bottom center */
+.secondary-btn {
+  background: transparent;
+  color: #667eea;
+  border-color: #667eea;
+}
+
+.secondary-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.download-btn {
+  background: transparent;
+  color: #6b7280;
+  border-color: #e5e7eb;
+}
+
+.download-btn:hover {
+  background: #6b7280;
+  color: white;
+  border-color: #6b7280;
+  transform: translateY(-3px);
+}
+
+.dark .download-btn {
+  border-color: #374151;
+  color: #9ca3af;
+}
+
+.dark .download-btn:hover {
+  background: #9ca3af;
+  color: #111827;
+  border-color: #9ca3af;
+}
+
+/* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -126,28 +258,80 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: bounce 2s infinite;
+  gap: 0.5rem;
+  color: #6b7280;
+  animation: float 3s ease-in-out infinite;
 }
 
 .scroll-text {
-  font-size: 0.875rem; /* text-sm */
-  color: #6b7280; /* muted-foreground */
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
-/* Arrow down icon */
-.arrow-down-icon {
-  width: 1.25rem; /* h-5 w-5 */
-  height: 1.25rem;
-  fill: #3b82f6; /* primary */
+.scroll-arrow {
+  display: flex;
+  justify-content: center;
 }
 
-/* Bounce animation */
-@keyframes bounce {
+.arrow-down {
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, #667eea, transparent);
+  border-radius: 1px;
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
   0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
   50% {
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .hero-stats {
+    gap: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cosmic-button {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    min-width: 80px;
   }
 }

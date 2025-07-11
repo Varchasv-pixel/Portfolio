@@ -1,5 +1,6 @@
 
 import { StarBackground } from "@/components/StarBackground";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Navbar } from "../components/Navbar";
 import { HeroSection } from "../components/HeroSection";
 import { AboutSection } from "../components/AboutSection";
@@ -8,43 +9,22 @@ import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsSection } from "../components/ProjectSection";
 import { Footer } from "../components/Footer";
 
+export const Home = () => {
+  return (
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <ScrollProgress />
+      <Navbar />
+      <StarBackground />
 
-
-export const  Home=() =>{
-
-
-    return <div className="min-h-screen bg-backfround text-foreground overflow-x-hidden">
-
-
-<Navbar />
-
-
-<StarBackground />
-
-
- <main>
+      <main>
         <HeroSection />
-         <AboutSection />
-          <ContactSection />
-          <SkillsSection />
-           <ProjectsSection />
-           
-       
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
       </main>
 
-
-       <Footer />
-
-  
-
-
-
-
-
-
-
-
-
-
+      <Footer />
     </div>
-}
+  );
+};

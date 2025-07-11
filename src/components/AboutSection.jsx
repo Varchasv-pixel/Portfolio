@@ -1,12 +1,12 @@
 import { Briefcase, Code, User } from "lucide-react";
-import "./About.css"; 
+import "./About.css";
 
 export const AboutSection = () => {
   return (
     <section id="about" className="about-section">
       <div className="about-container">
         <h2 className="about-title">
-          About <span className="highlight"> Me</span>
+          About <span className="highlight">Me</span>
         </h2>
 
         <div className="about-grid">
@@ -14,28 +14,22 @@ export const AboutSection = () => {
             <h3 className="about-subtitle">
               Passionate Web Developer & Tech Creator
             </h3>
-
             <p className="about-paragraph">
               With over 2 years of experience in web development, I specialize
               in creating responsive, accessible, and performant web
               applications using modern technologies.
             </p>
-
             <p className="about-paragraph">
               I'm passionate about creating elegant solutions to complex
               problems, and I'm constantly learning new technologies and
               techniques to stay at the forefront of the ever-evolving web
               landscape.
             </p>
-
             <div className="about-buttons">
               <a href="#contact" className="button cosmic-button">
                 Get In Touch
               </a>
-
-              <a href="" className="button button-outline">
-                Download CV
-              </a>
+              
             </div>
           </div>
 
@@ -46,7 +40,7 @@ export const AboutSection = () => {
                   <Code className="icon" />
                 </div>
                 <div className="card-text">
-                  <h4 className="card-title"> Web Development</h4>
+                  <h4 className="card-title">Web Development</h4>
                   <p className="card-description">
                     Creating responsive websites and web applications with
                     modern frameworks.
@@ -75,7 +69,6 @@ export const AboutSection = () => {
                 <div className="icon-bg">
                   <Briefcase className="icon" />
                 </div>
-
                 <div className="card-text">
                   <h4 className="card-title">Project Management</h4>
                   <p className="card-description">

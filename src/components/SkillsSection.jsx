@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+import { FaHtml5, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiExpress } from "react-icons/si";
 import "./SkillsSection.css";
 

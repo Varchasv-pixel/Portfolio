@@ -4,8 +4,6 @@ import "./Footer.css";
 export const Footer = () => {
   return (
     <footer className="footer">
-      
-
       <div className="social-links centered">
         <a
           href="https://www.linkedin.com/in/varchasv-sharma-6a7b4731b/"
