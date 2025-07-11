@@ -68,22 +68,19 @@ export const HeroSection = () => {
           <p className="hero-subtitle fade-in-delay-3">
             A passionate <span className="highlight-text">Full Stack Developer</span> who creates 
             exceptional digital experiences. I specialize in building modern, scalable web applications 
-            that combine beautiful design with powerful functionality.
+            that combine beautiful,  crisp designs with powerful functionality.
           </p>
 
           <div className="hero-stats fade-in-delay-4">
             <div className="stat-item">
-              <span className="stat-number">2+</span>
+              <span className="stat-number">1+</span>
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">15+</span>
+              <span className="stat-number">5+</span>
               <span className="stat-label">Projects Completed</span>
             </div>
-            <div className="stat-item">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Client Satisfaction</span>
-            </div>
+           
           </div>
 
           <div className="hero-cta fade-in-delay-5">
@@ -96,7 +93,7 @@ export const HeroSection = () => {
               View My Work
             </a>
             <a 
-              href="/resume.pdf" 
+              href="/varchasv's resume.pdf" 
               download 
               className="cosmic-button download-btn"
             >

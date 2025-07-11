@@ -22,7 +22,7 @@ export const Footer = () => {
           <Github size={20} />
         </a>
         <a
-          href="https://www.instagram.com/YOUR_INSTAGRAM"
+          href="https://www.instagram.com/_varch/?next=%2Fpune_audition_updates%2F&hl=en"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
