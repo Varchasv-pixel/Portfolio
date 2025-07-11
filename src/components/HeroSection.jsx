@@ -1,5 +1,5 @@
 import "./Hero.css"; 
-import ParticlesBackground from "./ParticlesBackground";
+
 import { useEffect, useState } from "react";
 import { ArrowRight, Download, Mail } from "lucide-react";
 
