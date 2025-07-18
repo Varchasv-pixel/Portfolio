@@ -1,4 +1,4 @@
-import "./Hero.css"; 
+import "./Hero.css";
 
 import { useEffect, useState } from "react";
 import { ArrowRight, Download, Mail } from "lucide-react";
@@ -7,7 +7,6 @@ export const HeroSection = () => {
   const [isLightMode, setIsLightMode] = useState(false);
 
   useEffect(() => {
-    // Function to check current theme
     const checkTheme = () => {
       const storedTheme = localStorage.getItem("theme");
       if (storedTheme === "light") {
@@ -15,36 +14,22 @@ export const HeroSection = () => {
       } else if (storedTheme === "dark") {
         setIsLightMode(false);
       } else {
-        // No saved preference, use system preference
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         setIsLightMode(!prefersDark);
       }
     };
 
-    // Check theme on mount
     checkTheme();
 
-    // Listen for theme changes
-    const handleStorageChange = () => {
-      checkTheme();
-    };
-
-    // Listen for system theme changes
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleStorageChange = () => checkTheme();
     const handleSystemThemeChange = () => {
-      if (!localStorage.getItem("theme")) {
-        checkTheme();
-      }
+      if (!localStorage.getItem("theme")) checkTheme();
     };
+    const handleThemeToggle = () => setTimeout(checkTheme, 100);
 
     window.addEventListener("storage", handleStorageChange);
     mediaQuery.addEventListener("change", handleSystemThemeChange);
-
-    // Custom event listener for theme toggle
-    const handleThemeToggle = () => {
-      setTimeout(checkTheme, 100); // Small delay to ensure localStorage is updated
-    };
-
     window.addEventListener("themeChanged", handleThemeToggle);
 
     return () => {
@@ -56,8 +41,9 @@ export const HeroSection = () => {
 
   return (
     <section id="hero" className="hero-section" style={{ position: "relative", overflow: "hidden" }}>
-      {/* {isLightMode && <ParticlesBackground />} */}
-      <div className="hero-container">
+      {/* Aurora background removed */}
+
+      <div className="hero-container" style={{ position: "relative", zIndex: 10 }}>
         <div className="hero-content">
           <h1 className="hero-title">
             <span className="fade-in">Hi, I'm</span>
@@ -66,9 +52,9 @@ export const HeroSection = () => {
           </h1>
 
           <p className="hero-subtitle fade-in-delay-3">
-            A passionate <span className="highlight-text">Full Stack Developer</span> who creates 
-            exceptional digital experiences. I specialize in building modern, scalable web applications 
-            that combine beautiful,  crisp designs with powerful functionality.
+            A passionate <span className="highlight-text">Full Stack Developer</span> who creates
+            exceptional digital experiences. I specialize in building modern, scalable web applications
+            that combine beautiful, crisp designs with powerful functionality.
           </p>
 
           <div className="hero-cta fade-in-delay-5">
@@ -80,9 +66,9 @@ export const HeroSection = () => {
               <ArrowRight size={20} />
               View My Work
             </a>
-            <a 
-              href="/varchasv's resume.pdf" 
-              download 
+            <a
+              href="/varchasv_resume.pdf"
+              download
               className="cosmic-button download-btn"
             >
               <Download size={20} />

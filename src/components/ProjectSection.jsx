@@ -11,8 +11,8 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
     tags: ["React", "Node.js", "MongoDB", "Stripe"],
     category: "fullstack",
-    demoUrl: "https://demo-ecommerce.com",
-    githubUrl: "https://github.com/Varchasv-pixel/ecommerce-platform",
+    demoUrl: "https://odoo-mocha.vercel.app/",
+    githubUrl: "https://github.com/PeushYadav/odoo",
     featured: true,
   },
   {
@@ -67,8 +67,7 @@ export const ProjectsSection = () => {
         </h2>
 
         <p className="projects-subtitle">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          more projects to be added soon.....
         </p>
 
         {/* Filter Buttons */}

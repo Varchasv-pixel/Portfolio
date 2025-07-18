@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+/* font-family: "Handlee", cursive; */
+
+@font-face {
+    font-family: starife;
+    src: url(fonts/StarifeDemo-3z9Y3.otf);
+}
+
+@font-face {
+    font-family: helvetica;
+    src: url(fonts/Helvetica.ttf);
+}
+
+@font-face {
+    font-family: helvetica-R;
+    src: url(fonts/helvetica-rounded-bold-5871d05ead8de.otf);
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: white;
+    background-image: url(assets/bgpatterns.svg);
+    background-repeat: repeat;
+    background-size: fit;
+    background-position: center;
+    font-family: helvetica;
+}

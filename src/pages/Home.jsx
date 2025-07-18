@@ -9,7 +9,7 @@ import { SkillsSection } from "../components/SkillsSection";
 import { ProjectsSection } from "../components/ProjectSection";
 import { Footer } from "../components/Footer";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <ScrollProgress />
@@ -28,3 +28,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

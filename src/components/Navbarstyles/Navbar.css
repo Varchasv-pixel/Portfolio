@@ -1,0 +1,103 @@
+/* Base styles */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 40;
+  transition: all 0.3s ease;
+  padding: 20px 0;
+}
+
+.navbar.scrolled {
+  padding: 12px 0;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust to match Tailwind's background */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.logo-text {
+  color: #1a1a1a;
+}
+
+/* Desktop nav */
+.nav-items-desktop {
+  display: none;
+}
+
+.nav-link {
+  color: rgba(0, 0, 0, 0.8);
+  margin-left: 32px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0070f3;
+}
+
+/* Menu toggle (mobile) */
+.menu-toggle {
+  padding: 8px;
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  z-index: 50;
+  cursor: pointer;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 40;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  font-size: 1.25rem;
+}
+
+/* Responsive rules */
+@media (min-width: 768px) {
+  .nav-items-desktop {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .mobile-menu {
+    display: none;
+  }
+}
+
